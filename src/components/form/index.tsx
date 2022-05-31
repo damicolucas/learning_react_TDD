@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 
 import { useAddPlayer } from "../../state/hook/useAddPlayer";
 import { useErrorMessage } from "../../state/hook/useErrorMessage";
+import { Alert, FormInner } from "./styles";
 
 export default function Form() {
   const [name, setName] = useState("");
@@ -21,15 +22,17 @@ export default function Form() {
 
   return (
     <form onSubmit={addPlayer}>
-      <input
-        ref={inputRef}
-        type="text"
-        placeholder="Enter players names"
-        value={name}
-        onChange={(v) => setName(v.target.value)}
-      />
-      <button disabled={!name}>Submit</button>
-      {errorMessage && <p role="alert">{errorMessage}</p>}
+      <FormInner>
+        <input
+          ref={inputRef}
+          type="text"
+          placeholder="Enter players names"
+          value={name}
+          onChange={(v) => setName(v.target.value)}
+        />
+        <button disabled={!name}>Submit</button>
+      </FormInner>
+      {errorMessage && <Alert role="alert">{errorMessage}</Alert>}
     </form>
   );
 }

@@ -1,8 +1,8 @@
-import { fireEvent, render, screen } from "@testing-library/react";
 import React from "react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { act } from "react-dom/test-utils";
 import { RecoilRoot } from "recoil";
-import Form from "./form";
+import Form from ".";
 
 describe('form.tsx behavior', () => {
   test("when input is empty, new player cannot been added", () => {

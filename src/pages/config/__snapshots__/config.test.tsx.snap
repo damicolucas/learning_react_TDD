@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the config page must be correct compiled 1`] = `
+<div>
+  <div
+    class="sc-bczRLJ fSSXVE"
+  >
+    <section>
+      <h2>
+        Vamos começar!
+      </h2>
+      <form>
+        <div
+          class="sc-dkzDqf jzFXIQ"
+        >
+          <input
+            placeholder="Enter players names"
+            type="text"
+            value=""
+          />
+          <button
+            disabled=""
+          >
+            Submit
+          </button>
+        </div>
+        
+      </form>
+      <ul />
+      <footer
+        class="sc-gsnTZi qDuGV"
+      >
+        <button
+          disabled=""
+        >
+          Iniciar Brincadeira
+        </button>
+        <img
+          alt="shopping bag"
+          src="/img/sacolas.png"
+        />
+      </footer>
+    </section>
+  </div>
+</div>
+`;
