@@ -3,7 +3,14 @@ import { RecoilRoot } from "recoil";
 import { fireEvent, render, screen } from "@testing-library/react";
 import Footer from ".";
 import { usePlayerList } from "../../state/hook/usePlayerList";
-import { useNavigate } from "react-router-dom";
+
+const mockNavigator = jest.fn()
+
+jest.mock('react-router-dom', () => {
+    return {
+        useNavigate: () => mockNavigator
+    }
+})
 
 jest.mock("../../state/hook/usePlayerList", () => {
   return {
@@ -11,11 +18,11 @@ jest.mock("../../state/hook/usePlayerList", () => {
   };
 });
 
-const mockNavigator = jest.fn()
+const mockRaffle = jest.fn()
 
-jest.mock('react-router-dom', () => {
+jest.mock('../../state/hook/useRaffle', () => {
     return {
-        useNavigate: () => mockNavigator
+        useRaffle: () => mockRaffle
     }
 })
 
@@ -60,5 +67,6 @@ describe("if there are enough players", () => {
 
     expect(mockNavigator).toHaveBeenCalledTimes(1)
     expect(mockNavigator).toHaveBeenCalledWith('/raffle')
+    expect(mockRaffle).toHaveBeenCalledTimes(1)
   });
 });

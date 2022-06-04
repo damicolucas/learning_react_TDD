@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { RecoilRoot } from "recoil";
 
 import Config from "./pages/config";
+import Raffle from "./pages/raffle";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
     <RecoilRoot>
       <Routes>
         <Route path="/" element={<Config/>}/>
+        <Route path="/raffle" element={<Raffle/>}/>
       </Routes>
     </RecoilRoot>
   </BrowserRouter>)
