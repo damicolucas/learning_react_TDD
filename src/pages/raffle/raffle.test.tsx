@@ -40,7 +40,7 @@ describe('on the raffle page', () => {
         </RecoilRoot>)
         
         const options = screen.queryAllByRole('option')
-        expect(options).toHaveLength(players.length)
+        expect(options).toHaveLength(players.length + 1) // because it has 1 option by default
     })
 
     test('raffled player is displayed when request', () => {

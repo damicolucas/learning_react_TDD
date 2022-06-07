@@ -26,6 +26,7 @@ export default function Raffle () {
                     value={currentPlayer}
                     onChange={e => setCurrentPlayer(e.target.value)}
                     required name="playerTime" id="playerTime" placeholder="Select your name">
+                        <option>Select your name</option>
                         {players.map(player => (<option key={player}>{player}</option>))}
                     </select>
                     <RaffleButton>Raffle</RaffleButton>
